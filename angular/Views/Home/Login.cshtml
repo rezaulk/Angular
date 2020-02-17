@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <form style="padding: 100px">
+            <div class="form-group">
+                <label for="inputAddress2">UserName</label>
+                <input ng-model="Username" type="text" class="form-control" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Password</label>
+                <input ng-model="Password" type="text" class="form-control" placeholder="" required>
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary" ng-click="login(message)">Login</button>
+            <button type="submit" class="btn btn-primary" ng-click="Signupcall()">Sign Up</button>
+        </form>
+
+        <div ng-class="result">{{message}}</div>
+
+        <br>
+        Full Name: {{Email + " " + Password}}
+        <br>
+        Full Name: {{Address + " " + Address2}}
+        <br>
+        Full Name: {{City + " "}}
+
+
+    </div>
+
+
+<script src="~/Scripts/AngularController/HomeController.js"></script>

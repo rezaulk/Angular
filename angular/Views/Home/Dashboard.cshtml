@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>
+
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+
+<body ng-app="myApp">
+    <form id="form1" runat="server">
+        <div class="container" ng-controller="myCtrl" data-ng-init="init()">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                            </div>
+                            <input type="text" class="form-control " placeholder="Search employees" ng-model="searchText" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped">
+                <thead class="bg-dark text-white text-uppercase">
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Type</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emplopye in employees|filter:searchText">
+                        <td>{{emplopye.name}}</td>
+                        <td>{{emplopye.username}}</td>
+                        <td>{{emplopye.email}}</td>
+                        <td>{{emplopye.password}}</td>
+                        <td>{{emplopye.type}}</td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</body>
+
+
+
